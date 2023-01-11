@@ -1,7 +1,7 @@
 const path = require('path');
 const { readGeoJSON } = require('./index');
 
-const p = path.join(__dirname, './test/chinawater.geojson');
+const p = path.join(__dirname, './test/layerdata.geojson');
 
 const time = 'time';
 console.time(time);

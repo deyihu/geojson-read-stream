@@ -37,6 +37,26 @@ function readGeoJSON(filePath, callback) {
         callback(`the file of ${filePath} is not exist`);
         return;
     }
+    const state = fs.statSync(filePath);
+    if (!state.isFile()) {
+        callback(`the file of ${filePath} is not file`);
+        return;
+    }
+    if (state.size / 1000 / 1000 < 50) {
+        fs.readFile(filePath, (err, buffer) => {
+            if (err) {
+                callback(err);
+                return;
+            }
+            try {
+                const str = buffer.toString();
+                callback(null, JSON.parse(str));
+            } catch (error) {
+                callback(error);
+            }
+        });
+        return;
+    }
     const features = [];
     let tempStr = '';
     let featuresJudge = false;

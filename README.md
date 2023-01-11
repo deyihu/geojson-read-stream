@@ -1,6 +1,6 @@
 # geojson-read-stream
 
-read big geojson file
+read big geojson file by stream
 
 ## Install
 
