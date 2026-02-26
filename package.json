@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/deyihu/geojson-read-stream#readme",
   "files": [
-    "./index.js",
-    "./LICENSE"
+    "index.js",
+    "LICENSE"
   ]
 }
